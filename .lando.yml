@@ -1,0 +1,16 @@
+name: todolist
+recipe: laravel
+config:
+  webroot: public
+  php: '8.1'
+services:
+  appserver:
+    config:
+      php: .lando/php.ini
+    xdebug: true
+    overrides:
+      environment:
+        PHP_IDE_CONFIG: "serverName=appserver"
+        DRUSH_OPTIONS_URI: "https://todolist.lndo.site/"
+  phpmyadmin:
+    type: phpmyadmin
